@@ -1,0 +1,66 @@
+let slep, back, smolflem, bigflem, wake, playerDump;
+var horizWalk;
+
+
+
+function setup() {
+	createCanvas(windowWidth, windowHeight);
+	// dump = createImg("new-walk-cycle.gif");
+	playerDump = new Dump(0,"new-walk-cycle.gif")
+	// noshoes = createImg("noshoes.gif");
+	slep = loadImage('slep.png');
+	back = loadImage('background.jpg');
+	smolflem = loadImage('smol_flem.png');
+	bigflem = loadImage('big_flem.png');
+	wake = loadImage('wak.png');
+	horizWalk = width;
+
+}
+
+function draw() {
+	image(back, 0, 0);
+	back.resize(width, height);
+	//playerDump.update();
+	image(slep, 200, 200);
+	slep.resize(700, 0);
+	image(smolflem, 0, 0);
+	smolflem.resize(100, 0);
+	image(bigflem, 0, 0);
+	bigflem.resize(300,0);
+	image(wake, -200, -300);
+	wake.resize(1500, 0);
+
+	if (keyIsDown(LEFT_ARROW)) {
+		playerDump.move();
+	}
+	if (keyIsDown(RIGHT_ARROW)) {
+		playerDump.move();
+	}
+}
+
+
+//dumps walk across the screen with shoes on.
+//you have to press space before they reach a certain point on the screen otherwise their shoes will squeak and wake the dragon up
+//if you press space then the character will jump a litte, shoes will fly off, and character will land as the other gif with no shoes and continue walking
+//need to start by making the gif move across the screen
+//ok we're having trouble here
+//everything disappears when I try to make the dumpling do anything but stay in one place
+
+
+
+
+
+
+
+class Dump {
+  constructor(startingXPos, imageFilename){
+    this.xPos = startingXPos;
+    this.yPos = 10;
+    this.gif = createImg(imageFilename);
+  }
+
+  move() {
+    xPos += 10;
+    this.gif.position(xPos, yPos);
+  }
+}
