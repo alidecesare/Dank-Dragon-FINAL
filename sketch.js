@@ -6,7 +6,7 @@ var dumpsize = 0;
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	for (let i = 0; i < maxdumps; i++) {
-		dumplings.push(new Dump(int(random(width)), height/2, "walk.gif"));
+		dumplings.push(new Dump(width, height/2, "walk.gif"));
 	}
 }
 function draw() {
