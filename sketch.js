@@ -1,6 +1,6 @@
 let dump, slep, wake, flem, scene;
 let dumplings = [];
-var maxdumps = 25;
+var maxdumps = 1;
 var dumpsize = 0;
 
 function setup() {
